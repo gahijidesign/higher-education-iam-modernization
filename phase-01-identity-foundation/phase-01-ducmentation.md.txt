@@ -1,0 +1,90 @@
+Phase 1 — Identity Foundation & Account Provisioning
+
+1. Objective
+
+Establish a foundational identity structure for a simulated higher education institution using Microsoft Entra ID.
+
+The implementation models six institutional identity populations and organizes them into security groups to support structured access management and future identity governance.
+
+2. Environment
+
+| Component | Configuration |
+| Identity Platform | Microsoft Entra ID |
+| Tenant | Personal Azure tenant |
+| Directory Edition | Microsoft Entra ID Free |
+| Identity Type | Cloud-only Member |
+| Group Type | Security |
+| Membership Type | Assigned |
+
+3. User Provisioning
+
+Six synthetic test accounts were created.
+
+| Account | Identity Population |
+| faculty01 | Faculty |
+| staff01 | Staff |
+| student01 | Students |
+| support01 | IT Support |
+| admin01 | Privileged Administrator |
+| contractor01 | Contractors |
+
+4. Security Group Configuration
+
+Six security groups were established.
+
+| Security Group | Intended Population |
+| SG-Faculty | Faculty |
+| SG-Staff | Staff |
+| SG-Students | Students |
+| SG-IT-Support | IT Support |
+| SG-IT-Privileged | Privileged Administrators |
+| SG-Contractors | Contractors |
+
+All groups use assigned membership and the Security group type.
+
+5. Security Design Decisions
+
+Identity Segmentation
+
+Users are organized according to institutional responsibilities to support consistent access assignment.
+
+Least Privilege
+
+Users are not automatically granted administrative privileges based on their identity population.
+
+Privileged Identity Separation
+
+The privileged administrator population is modeled separately from standard workforce accounts. Membership in the privileged security group does not automatically grant an Entra directory administrator role.
+
+Cloud-Only Identity
+
+Cloud-only test accounts provide an isolated identity environment without external directory dependencies.
+
+Synthetic Data
+
+All accounts are fictional and used exclusively for portfolio testing.
+
+6. Validation Checklist
+
+- [x] Six test accounts created.
+- [x] Six security groups created.
+- [x] Each account assigned to its corresponding group.
+- [x] Account type and enabled status verified.
+- [x] Unnecessary directory roles avoided.
+- [x] Screenshots captured and stored.
+
+7. Evidence
+
+Implementation screenshots are stored in the `evidence/` directory.
+
+Evidence includes:
+- All six test accounts.
+- All six security groups.
+- Individual user-to-group membership assignments.
+- Privileged administrator account profile.
+
+8. Next Phase
+
+Phase 2 will introduce identity lifecycle management, including onboarding, role changes, group membership updates, contractor offboarding, and account disablement.
+
+Status:Phase 1 configuration, validation, and evidence collection completed.
